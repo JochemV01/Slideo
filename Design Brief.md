@@ -28,15 +28,3 @@ Note that this device is not meant to replace eHMIs, but to coexist alongside it
 Ahangar, M. N., Ahmed, Q. Z., Khan, F. A., & Hafeez, M. (2021). A Survey of Autonomous Vehicles: Enabling Communication Technologies and Challenges. _Sensors_, _21_(3), Article 3. [https://doi.org/10.3390/s21030706](https://doi.org/10.3390/s21030706)
 
 de La Fortelle, A., Qian, X., Diemer, S., Grégoire, J., Moutarde, F., Bonnabel, S., Marjovi, A., Martinoli, A., Llatser, I., Festag, A., & Sjöberg, K. (2014, September 8). _Network of automated vehicles: The AutoNet 2030 vision_. ITS World Congress. [https://hal-mines-paristech.archives-ouvertes.fr/hal-01063484](https://hal-mines-paristech.archives-ouvertes.fr/hal-01063484)
-
-## Feedback
-- Make environment clear, far future of V2X
-- User test? Zwift or in person on street?
-- Examples of haptic feedback from literature
-- https://bazilinskyy.github.io/publications/petermeijer2017take.pdf
-- Friday give rough ideas of timeline
-- How is it feasible in real world?
-	- only v2x or also mixed traffic?
-- Look at existing bikes for design inspiration
-- integrate in handle bar, not much hands moving
-- Ask bike designers abt screen location?
