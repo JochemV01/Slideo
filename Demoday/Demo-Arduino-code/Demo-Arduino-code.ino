@@ -1,6 +1,22 @@
+/* June 2023
+ * Code by Jochem Verstegen for Final Bachelor Project
+ * Eindhoven University of Technology, faculty of Industrial Design
+ *
+ * This code can be used to demonstrate the haptic feedback.
+ * The left button activates the left vibration motor, the right button the right motor.
+ * Technically, it is possible for both buttons to trigger both motors.
+ * For the electronics needed, please see the "Electronics.png" file in the demoday folder.
+ * Note the presence of a switch connected to pin 2.
+ * This switch can toggle between the regular mode and navigation mode.
+ * When this switch is not included, it will default to the regular mode.
+ *
+ * The regular mode contains the feedback when indicating a turn (in this case pressing a button).
+ * The navigation mode indicates upcoming turns when following turn-by-turn nagivation.
+ */
+
 const int ledPin = 13;
-const int vibrPinL = 5;
-const int vibrPinR = 6;
+const int vibrPinL = 6;
+const int vibrPinR = 5;
 const int buttonPinL = 7;
 const int buttonPinR = 8;
 const int modePin = 2;
@@ -9,8 +25,8 @@ String side = "none";
 int sideNr = 0;
 
 float intensity;
-const int max_intensity = 208;
-const int min_intensity = 25;
+const int max_intensity = 208; // set the max PWM rate for the max voltage. Max 4V = 0.8 * 255 = 204.
+const int min_intensity = 25; // set the min PWM rate at which the motors still vibrate. Trial and error.
 
 long int time = 0;
 long int vibrateTime = 0;
@@ -21,8 +37,6 @@ int count = 0;
 int randomCount = 0;
 
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
   pinMode(vibrPinR, OUTPUT);
   pinMode(vibrPinL, OUTPUT);
   pinMode(ledPin, OUTPUT);
@@ -57,13 +71,8 @@ ________________________________
 */
 
 void loop() {
-  // put your main code here, to run repeatedly:
   if (digitalRead(modePin) == HIGH) navigationMode();
   else turningMode();
-  // Serial.println(digitalRead(modePin));
-
-  // navigationMode();
-  // turningMode();
 }
 
 void turningMode() {
@@ -196,12 +205,7 @@ void vibrateCurve(String direction, int startStrength, int endStrength, int dura
       digitalWrite(ledPin, HIGH);
       step+=1;
     } else if (step >= duration / stepDuration) {
-      // delay(stepDuration);
       vibrateOnce(direction, endStrength, timeAfter);
-      // vibrating = false;
-      // setVibrate(direction, 0);
-      // digitalWrite(ledPin, LOW);
-      // step = 0;
     } else step+=1;
   }
 }
