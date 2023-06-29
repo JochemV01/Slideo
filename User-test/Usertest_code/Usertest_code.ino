@@ -1,9 +1,19 @@
+/* June 2023
+ * Code by Jochem Verstegen for Final Bachelor Project
+ * Eindhoven University of Technology, faculty of Industrial Design
+ *
+ * This code can be used together with the user test video.
+ * The vibration patterns are synchronized with the times they occur in the video.
+ * For the electronics needed, see the "Electronics.png" file in the user test folder.
+ * Pressing (and holding) the LEFT button will play the vibration patterns with communication phase.
+ * The RIGHT button turns off the communication phase.
+ */
+
 const int ledPin = 13;
 const int vibrPinL = 5;
 const int vibrPinR = 6;
-const int buttonPinL = 8;
-const int buttonPinR = 7;
-const int modePin = 2;
+const int buttonPinL = 7;
+const int buttonPinR = 8;
 
 String side = "none";
 int sideNr = 0;
@@ -68,7 +78,6 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   pinMode(buttonPinL, INPUT);
   pinMode(buttonPinR, INPUT);
-  pinMode(modePin, INPUT);
 }
 
 /* Two (or maybe three) variations for haptic feedback are compared:
