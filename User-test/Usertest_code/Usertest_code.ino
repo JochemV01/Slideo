@@ -10,8 +10,8 @@
  */
 
 const int ledPin = 13;
-const int vibrPinL = 5;
-const int vibrPinR = 6;
+const int vibrPinL = 6;
+const int vibrPinR = 5;
 const int buttonPinL = 7;
 const int buttonPinR = 8;
 
